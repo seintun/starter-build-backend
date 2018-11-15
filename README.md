@@ -13,10 +13,12 @@
     database: 'INSERT_DATABASE_NAME'
   }
 4. Use `psql - l` to check if database is successfully created
-5. `npm run knex migrate:make users` & create migrations
-6. `npm run knex seeds:make 01_users` & create seeds
+5. Add `"knex": "knex"` at the end of scripts inside package.json
+6. `npm run knex migrate:make users` & create migrations
+7. `npm run knex seed:make 01_users` & create seeds
+- `npm run knex migrate:latest`,
+- `npm run knex seed:run`
 - `npm run knex migrate:currentVersion`, 
-- `npm run knex migrate:latest`, 
 - `npm run knex migrate:rollback` for status check
 
 # Users Migration
@@ -77,5 +79,4 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
-
 ```
